@@ -53,8 +53,9 @@ install:
 - cp ../config/routes/*.yaml config/routes
 - composer require friendsofsymfony/user-bundle
 - console doctrine:database:create
-- console doctrine:migrations:diff --quiet
-- console doctrine:migrations:migrate --no-interaction --quiet
+# - console doctrine:migrations:diff --quiet
+# - console doctrine:migrations:migrate --no-interaction --quiet
+- console doctrine:schema:update --force
 - console assets:install --symlink
 
 - composer global require sensiolabs/security-checker # --no-scripts
