@@ -73,7 +73,7 @@ after_script:
 - composer console -- doctrine:query:sql "SELECT * FROM author"
 
 - ls --recursive --color config
-- php -s config/bundles.php | elinks -force-html -dump-color-mode 4 -dump
+- php -s           config/bundles.php | elinks -force-html -dump-color-mode 4 -dump
 - $GOPATH/bin/ccat config/routes.yaml
 - $GOPATH/bin/ccat config/services_test.yaml
 - $GOPATH/bin/ccat config/services.yaml
@@ -84,6 +84,9 @@ after_script:
 - $GOPATH/bin/ccat config/packages/translation.yaml
 - $GOPATH/bin/ccat config/packages/routing.yaml
 - $GOPATH/bin/ccat config/packages/security.yaml
+- $GOPATH/bin/ccat config/routes/annotations.yaml
+- $GOPATH/bin/ccat config/routes/dev/twig.yaml
+- $GOPATH/bin/ccat config/routes/dev/web_profiler.yaml
 
 - console debug:router
 - console server:start &
