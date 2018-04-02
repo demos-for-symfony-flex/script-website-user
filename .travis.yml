@@ -49,8 +49,8 @@ install:
 # - composer require symfony/security-csrf
 - cp ../config/packages/*.yaml config/packages
 - cp ../config/routes/*.yaml config/routes
-- composer require friendsofsymfony/user-bundle
 - cp ../.env.dist .
+- composer require friendsofsymfony/user-bundle
 - console doctrine:database:create
 - console doctrine:migrations:diff --quiet
 - console doctrine:migrations:migrate --no-interaction --quiet
