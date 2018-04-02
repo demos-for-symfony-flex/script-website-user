@@ -48,6 +48,7 @@ install:
 - composer show --latest
 - install --directory config/packages
 - cp ../config/packages/*.yaml config/packages
+- cp ../config/routes/*.yaml config/routes
 - composer require friendsofsymfony/user-bundle
 - composer global require sensiolabs/security-checker # --no-scripts
 - ls -A ~
