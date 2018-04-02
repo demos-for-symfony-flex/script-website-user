@@ -40,8 +40,6 @@ install:
 - composer create-project symfony/website-skeleton
 - cd website-skeleton
 - install --directory config/packages
-- cp ../config/packages/*.yaml config/packages
-- cp ../config/routes/*.yaml config/routes
 # - composer require symfony/yaml # in symfony/website-skeleton
 # - composer require symfony/console # in symfony/website-skeleton
 # - composer require symfony/twig-bundle # in symfony/website-skeleton
@@ -49,6 +47,8 @@ install:
 # - composer require symfony/orm-pack # in symfony/website-skeleton
 # - composer require symfony/swiftmailer-bundle # in symfony/website-skeleton
 - composer require symfony/security-csrf
+- cp ../config/packages/*.yaml config/packages
+- cp ../config/routes/*.yaml config/routes
 - composer require friendsofsymfony/user-bundle
 - console doctrine:database:create
 - console doctrine:migrations:diff --quiet
