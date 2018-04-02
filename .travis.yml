@@ -74,6 +74,9 @@ after_script:
 
 - ls --recursive --color config
 - php -s config/bundles.php | elinks -force-html -dump-color-mode 4 -dump
+- $GOPATH/bin/ccat config/routes.yaml
+- $GOPATH/bin/ccat config/services_test.yaml
+- $GOPATH/bin/ccat config/services.yaml
 - $GOPATH/bin/ccat config/packages/doctrine.yaml
 - $GOPATH/bin/ccat config/packages/easy_admin.yaml
 - $GOPATH/bin/ccat config/packages/fos_user.yaml
