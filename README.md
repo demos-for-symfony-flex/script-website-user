@@ -1,7 +1,8 @@
 # testing-website-user
 
 ## TODO
-* Ensure db schema is written to db.
+* Fixture test users
+* Ensure db schema is written to db. DONE
 * Testing.
 
 ## Documentation
