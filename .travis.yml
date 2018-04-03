@@ -123,6 +123,7 @@ after_script:
 - console help doctrine:migrations:migrate --ansi
 - console help doctrine:query:dql --ansi
 - console help doctrine:query:sql --ansi
+- console help doctrine:schema:update --ansi
 - console help doctrine:schema:validate --ansi
 
 - console list make --ansi
