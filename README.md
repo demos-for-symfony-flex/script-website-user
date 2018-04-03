@@ -1,5 +1,9 @@
 # testing-website-user
 
+## TODO
+* Ensure db schema is written
+* Testing
+
 ## Documentation
 ### Getting Started With FOSUserBundle
 There are tow version of this document, one difference is in security.yaml
