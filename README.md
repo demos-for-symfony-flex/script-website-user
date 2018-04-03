@@ -1,8 +1,8 @@
 # testing-website-user
 
 ## TODO
-* Ensure db schema is written
-* Testing
+* Ensure db schema is written to db.
+* Testing.
 
 ## Documentation
 ### Getting Started With FOSUserBundle
