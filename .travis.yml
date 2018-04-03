@@ -78,9 +78,9 @@ after_script:
 - ls --color src/Repository
 - php -s src/Repository/AuthorRepository.php | elinks -force-html -dump-color-mode 4 -dump
 - php -s src/Repository/BlogPostRepository.php | elinks -force-html -dump-color-mode 4 -dump
-- composer console -- doctrine:query:sql "INSERT INTO author (name) VALUES ('Tom B. Erichsen')"
-- composer console -- doctrine:query:dql "SELECT a FROM App\Entity\Author a"
-- composer console -- doctrine:query:sql "SELECT * FROM author"
+# - composer console -- doctrine:query:sql "INSERT INTO author (name) VALUES ('Tom B. Erichsen')"
+- composer console -- doctrine:query:dql "SELECT u FROM App\Entity\User u"
+- composer console -- doctrine:query:sql "SELECT * FROM fos_user"
 
 - ls --recursive --color config
 - php -s           config/bundles.php | elinks -force-html -dump-color-mode 4 -dump
