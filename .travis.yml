@@ -108,30 +108,31 @@ after_script:
 - composer show --latest
 - $GOPATH/bin/ccat composer.json
 
-- composer console -- --ansi
+- console --ansi
 
-- composer console -- list debug --ansi
-- composer console -- help debug:router --ansi
+- console list debug --ansi
+- console help debug:router --ansi
 
-- composer console -- list doctrine --ansi
-- composer console -- help doctrine:database:create --ansi
-# - composer console -- help doctrine:generate:entities --ansi
-- composer console -- help doctrine:mapping:convert --ansi
-- composer console -- help doctrine:mapping:import --ansi
-- composer console -- help doctrine:mapping:info --ansi
-- composer console -- help doctrine:migrations:diff --ansi
-- composer console -- help doctrine:migrations:migrate --ansi
-- composer console -- help doctrine:query:dql --ansi
-- composer console -- help doctrine:query:sql --ansi
-- composer console -- help doctrine:schema:validate --ansi
+- console list doctrine --ansi
+- console help doctrine:database:create --ansi
+# - console help doctrine:generate:entities --ansi
+- console help doctrine:mapping:convert --ansi
+- console help doctrine:mapping:import --ansi
+- console help doctrine:mapping:info --ansi
+- console help doctrine:migrations:diff --ansi
+- console help doctrine:migrations:migrate --ansi
+- console help doctrine:query:dql --ansi
+- console help doctrine:query:sql --ansi
+- console help doctrine:schema:validate --ansi
 
-- composer console -- list make --ansi
-- composer console -- help make:crud --ansi
-- composer console -- help make:entity --ansi
-- composer console -- help make:migration --ansi
+- console list make --ansi
+- console help make:crud --ansi
+- console help make:entity --ansi
+- console help make:migration --ansi
+- console help make:unit-test --ansi
 
-- composer console -- list router --ansi
-- composer console -- help router:match --ansi
+- console list router --ansi
+- console help router:match --ansi
 
-- composer console -- list server --ansi
-- composer console -- help server:start --ansi
+- console list server --ansi
+- console help server:start --ansi
