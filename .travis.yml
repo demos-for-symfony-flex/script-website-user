@@ -130,6 +130,7 @@ after_script:
 - console list make --ansi
 - console help make:crud --ansi
 - console help make:entity --ansi
+- console help make:fixtures --ansi
 - console help make:migration --ansi
 - console help make:unit-test --ansi
 
