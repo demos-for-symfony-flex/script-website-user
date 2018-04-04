@@ -23,8 +23,10 @@ bin/console doctrine:database:create
 bin/console doctrine:migrations:diff --quiet
 bin/console doctrine:migrations:migrate --no-interaction --quiet
 # bin/console doctrine:schema:update --force
-composer require doctrine/doctrine-fixtures-bundle --dev
-cp ../src/DataFixtures/AppFixtures.php src/DataFixtures
-bin/console doctrine:fixtures:load --append
+# composer require doctrine/doctrine-fixtures-bundle --dev
+# cp ../src/DataFixtures/AppFixtures.php src/DataFixtures
+# bin/console doctrine:fixtures:load --append
+bin/console fos:user:create superadmin superadmin@example.com superadmin --super-admin
+bin/console fos:user:create user user@example.com user
 
 bin/console assets:install --symlink
