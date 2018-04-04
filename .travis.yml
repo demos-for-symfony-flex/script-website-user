@@ -125,3 +125,5 @@ after_script:
 
 - console list server --ansi
 - console help server:start --ansi
+
+- vendor/bin/simple-phpunit --help
