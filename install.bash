@@ -14,15 +14,15 @@ install --directory config # Is it really needed?
 # composer require symfony/orm-pack # in symfony/website-skeleton
 # composer require symfony/swiftmailer-bundle # in symfony/website-skeleton
 # composer require symfony/security-csrf
-cp ../config/packages/*.yaml config/packages
-cp ../config/routes/*.yaml config/routes
+cp ../config/packages/*.yaml config/packages --verbose
+cp ../config/routes/*.yaml config/routes --verbose
 composer require friendsofsymfony/user-bundle
 
-cp ../src/Entity/*.php src/Entity # May be done earlier.
-console doctrine:database:create
-console doctrine:migrations:diff --quiet
-console doctrine:migrations:migrate --no-interaction --quiet
-# console doctrine:schema:update --force
+cp ../src/Entity/*.php src/Entity --verbose # May be done earlier.
+bin/console doctrine:database:create
+bin/console doctrine:migrations:diff --quiet
+bin/console doctrine:migrations:migrate --no-interaction --quiet
+# bin/console doctrine:schema:update --force
 composer require doctrine/doctrine-fixtures-bundle --dev
 
-console assets:install --symlink
+bin/console assets:install --symlink
