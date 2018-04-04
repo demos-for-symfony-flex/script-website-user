@@ -41,6 +41,8 @@ install:
 - sh install.bash
 - cd $CREATE_PROJECT_DIRECTORY
 
+- vendor/bin/simple-phpunit --no-configuration
+
 - composer global require symfony/flex
 - composer global require sensiolabs/security-checker
 
