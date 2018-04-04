@@ -18,7 +18,7 @@ php:
 
 env:
   global:
-  - PATH=$TRAVIS_BUILD_DIR/website-skeleton/bin:$TRAVIS_BUILD_DIR/website-skeleton/vendor/bin:$HOME/vendor/bin:$PATH
+  - PATH=$(composer config bin-dir --working-dir=website-skeleton --absolute):$(composer config bin-dir --global --absolute):$PATH
   - CREATE_PROJECT_DIRECTORY=website-skeleton # TODO consider ramdisk
 
 matrix:
@@ -50,6 +50,8 @@ script:
 after_script:
 - composer show --latest
 - ls -A ~
+- composer exec --list
+- composer global exec --list
 - composer global exec -- security-checker
 - composer global exec -- security-checker --ansi
 - composer global exec -- security-checker security:check --end-point=http://security.sensiolabs.org/check_lock --ansi
