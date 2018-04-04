@@ -42,7 +42,7 @@ install:
 - composer global require symfony/flex
 - composer global require sensiolabs/security-checker
 
-script: true
+# script:
 
 after_script:
 - composer show --latest
