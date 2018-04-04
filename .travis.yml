@@ -139,6 +139,7 @@ after_script:
 - vendor/bin/simple-phpunit --list-suites
 - vendor/bin/simple-phpunit --list-tests
 
+- composer config --list
+- composer config --global --list
 - printenv PATH
-
 - pwd ; du -sch *
