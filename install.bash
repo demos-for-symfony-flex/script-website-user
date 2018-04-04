@@ -31,7 +31,7 @@ bin/console fos:user:create user user@example.com user
 
 cp --recursive ../tests . --verbose
 echo 'TODO: check this list...'
-composer require --dev phpunit/phpunit
+# composer require --dev phpunit/phpunit
 # composer require --dev symfony/phpunit-bridge
 # composer require --dev symfony/browser-kit
 # composer require --dev symfony/css-selector
