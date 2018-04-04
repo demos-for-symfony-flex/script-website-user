@@ -18,7 +18,7 @@ php:
 
 env:
   global:
-  - PATH=$(composer config bin-dir --working-dir=website-skeleton --absolute):$(composer config bin-dir --global --absolute):$PATH
+  - PATH=$TRAVIS_BUILD_DIR/website-skeleton/bin:$(composer config bin-dir --global --absolute):$PATH
   - CREATE_PROJECT_DIRECTORY=website-skeleton # TODO consider ramdisk
 
 matrix:
@@ -138,5 +138,7 @@ after_script:
 - vendor/bin/simple-phpunit --list-groups
 - vendor/bin/simple-phpunit --list-suites
 - vendor/bin/simple-phpunit --list-tests
+
+- printenv PATH
 
 - pwd ; du -sch *
