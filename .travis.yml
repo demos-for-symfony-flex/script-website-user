@@ -107,6 +107,9 @@ after_script:
 - console help doctrine:schema:update --ansi
 - console help doctrine:schema:validate --ansi
 
+- console list fos:user --ansi
+- console help fos:user:create --ansi
+
 - console list make --ansi
 - console help make:crud --ansi
 - console help make:entity --ansi
