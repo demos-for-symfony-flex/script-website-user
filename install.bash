@@ -31,13 +31,14 @@ bin/console fos:user:create user user@example.com user
 
 cp --recursive ../tests . --verbose
 echo 'TODO: check this list...'
-composer require --dev symfony/phpunit-bridge
-composer require --dev symfony/browser-kit
-composer require --dev symfony/css-selector
-composer require --dev symfony/debug-pack
-composer require --dev symfony/dotenv
-composer require --dev symfony/maker-bundle
-composer require --dev symfony/profiler-pack
-composer require --dev symfony/web-server-bundle
+composer require --dev phpunit/phpunit
+# composer require --dev symfony/phpunit-bridge
+# composer require --dev symfony/browser-kit
+# composer require --dev symfony/css-selector
+# composer require --dev symfony/debug-pack
+# composer require --dev symfony/dotenv
+# composer require --dev symfony/maker-bundle
+# composer require --dev symfony/profiler-pack
+# composer require --dev symfony/web-server-bundle
 
 bin/console assets:install --symlink
