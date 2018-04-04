@@ -4,6 +4,7 @@ set -ev # https://docs.travis-ci.com/user/customizing-the-build/
 
 composer create-project --no-install symfony/website-skeleton $CREATE_PROJECT_DIRECTORY
 cd website-skeleton
+composer config bin-dir bin
 cp ../.env.dist . # Needs apparently to be done before install.
 composer install
 install --directory config # Is it really needed?
