@@ -24,5 +24,6 @@ bin/console doctrine:migrations:diff --quiet
 bin/console doctrine:migrations:migrate --no-interaction --quiet
 # bin/console doctrine:schema:update --force
 composer require doctrine/doctrine-fixtures-bundle --dev
+bin/console doctrine:fixtures:load
 
 bin/console assets:install --symlink
