@@ -136,3 +136,6 @@ after_script:
 - vendor/bin/simple-phpunit --list-groups
 - vendor/bin/simple-phpunit --list-suites
 - vendor/bin/simple-phpunit --list-tests
+
+- pwd
+- du -sch *
