@@ -131,3 +131,6 @@ after_script:
 - console help server:start --ansi
 
 - vendor/bin/simple-phpunit --help
+- vendor/bin/simple-phpunit --list-groups
+- vendor/bin/simple-phpunit --list-suites
+- vendor/bin/simple-phpunit --list-tests
