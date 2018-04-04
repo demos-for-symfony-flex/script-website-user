@@ -19,6 +19,7 @@ php:
 env:
   global:
   - PATH=$TRAVIS_BUILD_DIR/website-skeleton/bin:$TRAVIS_BUILD_DIR/website-skeleton/vendor/bin:$HOME/vendor/bin:$PATH
+  - CREATE_PROJECT_DIRECTORY=website-skeleton
 
 matrix:
   fast_finish: true
@@ -38,6 +39,7 @@ before_install:
 
 install:
 - sh install.bash
+- cd $CREATE_PROJECT_DIRECTORY
 
 - composer global require symfony/flex
 - composer global require sensiolabs/security-checker
