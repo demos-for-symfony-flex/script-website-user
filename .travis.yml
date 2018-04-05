@@ -45,7 +45,7 @@ install:
 - composer global require sensiolabs/security-checker
 
 script:
-- vendor/bin/simple-phpunit
+- composer exec -- simple-phpunit
 
 after_script:
 - composer show --latest
