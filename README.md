@@ -8,6 +8,7 @@
 * the code in this repository may be migrated to skeleton instead of website-skeleton to avoid the suspected bug.
 
 ## TODO
+* Link to Travis
 * Fixture test users
 * Ensure db schema is written to db. DONE
 * Testing.
