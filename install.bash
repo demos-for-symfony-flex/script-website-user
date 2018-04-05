@@ -4,7 +4,11 @@ set -ev # https://docs.travis-ci.com/user/customizing-the-build/
 
 origin=$(pwd)
 composer create-project --no-install symfony/website-skeleton $CREATE_PROJECT_DIRECTORY
-cd $CREATE_PROJECT_DIRECTORY
+if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
+  cd $CREATE_PROJECT_DIRECTORY
+else
+  cd website-skeleton
+fi
 composer config bin-dir bin
 cp $origin/.env.dist . # Needs apparently to be done before install.
 composer install
