@@ -45,7 +45,7 @@ install:
 - composer global require sensiolabs/security-checker
 
 script:
-- composer exec -- simple-phpunit
+- composer exec --verbose -- simple-phpunit
 
 after_script:
 - composer show --latest
@@ -70,9 +70,9 @@ after_script:
 - ls --color src/Repository
 - php -s src/Repository/AuthorRepository.php | elinks -force-html -dump-color-mode 4 -dump
 - php -s src/Repository/BlogPostRepository.php | elinks -force-html -dump-color-mode 4 -dump
-# - console doctrine:query:sql "INSERT INTO author (name) VALUES ('Tom B. Erichsen')"
-- console doctrine:query:dql "SELECT u FROM App\Entity\User u"
-- console doctrine:query:sql "SELECT * FROM fos_user"
+# - composer exec --verbose -- console doctrine:query:sql "INSERT INTO author (name) VALUES ('Tom B. Erichsen')"
+- composer exec --verbose -- console doctrine:query:dql "SELECT u FROM App\Entity\User u"
+- composer exec --verbose -- console doctrine:query:sql "SELECT * FROM fos_user"
 
 - ls --recursive --color config
 - php -s           config/bundles.php | elinks -force-html -dump-color-mode 4 -dump
@@ -90,8 +90,8 @@ after_script:
 - $GOPATH/bin/ccat config/routes/dev/twig.yaml
 - $GOPATH/bin/ccat config/routes/dev/web_profiler.yaml
 
-- console debug:router
-- console server:start &
+- composer exec --verbose -- console debug:router
+- composer exec --verbose -- console server:start &
 - printf 'HEAD /admin/dashboard HTTP/1.1\r\n\r\n' | socat - TCP4:localhost:8000,forever >/dev/null # Waiting for server to connect.
 - elinks http://localhost:8000/login -dump-color-mode 4 -dump
 # - elinks http://localhost:8000/index.php/admin -dump-color-mode 4 -dump
@@ -100,44 +100,44 @@ after_script:
 - composer show --latest
 - $GOPATH/bin/ccat composer.json
 
-- console --ansi
+- composer exec --verbose -- console --ansi
 
-- console list debug --ansi
-- console help debug:router --ansi
+- composer exec --verbose -- console list debug --ansi
+- composer exec --verbose -- console help debug:router --ansi
 
-- console list doctrine --ansi
-- console help doctrine:database:create --ansi
-# - console help doctrine:generate:entities --ansi
-- console help doctrine:mapping:convert --ansi
-- console help doctrine:mapping:import --ansi
-- console help doctrine:mapping:info --ansi
-- console help doctrine:migrations:diff --ansi
-- console help doctrine:migrations:migrate --ansi
-- console help doctrine:query:dql --ansi
-- console help doctrine:query:sql --ansi
-- console help doctrine:schema:update --ansi
-- console help doctrine:schema:validate --ansi
+- composer exec --verbose -- console list doctrine --ansi
+- composer exec --verbose -- console help doctrine:database:create --ansi
+# - composer exec --verbose -- console help doctrine:generate:entities --ansi
+- composer exec --verbose -- console help doctrine:mapping:convert --ansi
+- composer exec --verbose -- console help doctrine:mapping:import --ansi
+- composer exec --verbose -- console help doctrine:mapping:info --ansi
+- composer exec --verbose -- console help doctrine:migrations:diff --ansi
+- composer exec --verbose -- console help doctrine:migrations:migrate --ansi
+- composer exec --verbose -- console help doctrine:query:dql --ansi
+- composer exec --verbose -- console help doctrine:query:sql --ansi
+- composer exec --verbose -- console help doctrine:schema:update --ansi
+- composer exec --verbose -- console help doctrine:schema:validate --ansi
 
-- console list fos:user --ansi
-- console help fos:user:create --ansi
+- composer exec --verbose -- console list fos:user --ansi
+- composer exec --verbose -- console help fos:user:create --ansi
 
-- console list make --ansi
-- console help make:crud --ansi
-- console help make:entity --ansi
-- console help make:fixtures --ansi
-- console help make:migration --ansi
-- console help make:unit-test --ansi
+- composer exec --verbose -- console list make --ansi
+- composer exec --verbose -- console help make:crud --ansi
+- composer exec --verbose -- console help make:entity --ansi
+- composer exec --verbose -- console help make:fixtures --ansi
+- composer exec --verbose -- console help make:migration --ansi
+- composer exec --verbose -- console help make:unit-test --ansi
 
-- console list router --ansi
-- console help router:match --ansi
+- composer exec --verbose -- console list router --ansi
+- composer exec --verbose -- console help router:match --ansi
 
-- console list server --ansi
-- console help server:start --ansi
+- composer exec --verbose -- console list server --ansi
+- composer exec --verbose -- console help server:start --ansi
 
-- vendor/bin/simple-phpunit --help
-- vendor/bin/simple-phpunit --list-groups
-- vendor/bin/simple-phpunit --list-suites
-- vendor/bin/simple-phpunit --list-tests
+- composer exec --verbose -- simple-phpunit --help
+- composer exec --verbose -- simple-phpunit --list-groups
+- composer exec --verbose -- simple-phpunit --list-suites
+- composer exec --verbose -- simple-phpunit --list-tests
 
 - composer config --list
 - composer config --global --list
