@@ -39,7 +39,7 @@ before_install:
   fi
 
 install:
-- sh install.bash
+- bash install.bash
 # - cd $CREATE_PROJECT_DIRECTORY
 - if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
     cd $CREATE_PROJECT_DIRECTORY;
