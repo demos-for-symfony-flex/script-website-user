@@ -19,7 +19,7 @@ php:
 env:
   global:
   - PATH=$TRAVIS_BUILD_DIR/website-skeleton/bin:$(composer config bin-dir --global --absolute):$PATH
-  - CREATE_PROJECT_DIRECTORY=website-skeleton # TODO consider ramdisk
+  - CREATE_PROJECT_DIRECTORY=/dev/shm/website-skeleton # TODO consider ramdisk
 
 matrix:
   fast_finish: true
