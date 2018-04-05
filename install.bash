@@ -9,10 +9,11 @@ if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
 else
   cd website-skeleton
 fi
+(cd $origin && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
 composer config bin-dir bin
-cp $origin/.env.dist . # Needs apparently to be done before install.
+# cp $origin/.env.dist . # Needs apparently to be done before install.
+
 composer install
-install --directory config # Is it really needed?
 # composer require symfony/yaml # in symfony/website-skeleton
 # composer require symfony/console # in symfony/website-skeleton
 # composer require symfony/twig-bundle # in symfony/website-skeleton
@@ -20,11 +21,11 @@ install --directory config # Is it really needed?
 # composer require symfony/orm-pack # in symfony/website-skeleton
 # composer require symfony/swiftmailer-bundle # in symfony/website-skeleton
 # composer require symfony/security-csrf
-cp $origin/config/packages/*.yaml config/packages --verbose
-cp $origin/config/routes/*.yaml config/routes --verbose
+# cp $origin/config/packages/*.yaml config/packages --verbose
+# cp $origin/config/routes/*.yaml config/routes --verbose
 composer require friendsofsymfony/user-bundle
 
-cp $origin/src/Entity/*.php src/Entity --verbose # May be done earlier.
+# cp $origin/src/Entity/*.php src/Entity --verbose # May be done earlier.
 bin/console doctrine:database:create
 bin/console doctrine:migrations:diff --quiet
 bin/console doctrine:migrations:migrate --no-interaction --quiet
@@ -35,16 +36,6 @@ bin/console doctrine:migrations:migrate --no-interaction --quiet
 bin/console fos:user:create superadmin superadmin@example.com superadmin --super-admin
 bin/console fos:user:create user user@example.com user
 
-cp --recursive $origin/tests . --verbose
-echo 'TODO: check this list...'
-# composer require --dev phpunit/phpunit
-# composer require --dev symfony/phpunit-bridge
-# composer require --dev symfony/browser-kit
-# composer require --dev symfony/css-selector
-# composer require --dev symfony/debug-pack
-# composer require --dev symfony/dotenv
-# composer require --dev symfony/maker-bundle
-# composer require --dev symfony/profiler-pack
-# composer require --dev symfony/web-server-bundle
+# cp --recursive $origin/tests . --verbose
 
 bin/console assets:install --symlink
