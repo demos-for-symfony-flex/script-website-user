@@ -49,6 +49,7 @@ script:
 - composer exec --verbose -- simple-phpunit
 
 after_script:
+- composer config bin-dir --absolute
 - composer config bin-dir --global --absolute
 - composer show --latest
 - ls -A ~
