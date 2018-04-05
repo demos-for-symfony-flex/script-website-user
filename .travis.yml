@@ -95,6 +95,7 @@ after_script:
 - $GOPATH/bin/ccat config/packages/translation.yaml
 - $GOPATH/bin/ccat config/packages/routing.yaml
 - $GOPATH/bin/ccat config/packages/security.yaml
+- $GOPATH/bin/ccat config/packages/test/web_profiler.yaml
 - $GOPATH/bin/ccat config/routes/annotations.yaml
 - $GOPATH/bin/ccat config/routes/dev/twig.yaml
 - $GOPATH/bin/ccat config/routes/dev/web_profiler.yaml
