@@ -9,7 +9,7 @@ if [[ -v $CREATE_PROJECT_DIRECTORY ]]; then
 else
   cd website-skeleton
 fi
-(cd $origin/install && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
+(cd $origin/etap/install && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
 composer config bin-dir bin
 # cp $origin/.env.dist . # Needs apparently to be done before install.
 
@@ -23,7 +23,7 @@ composer install
 # composer require symfony/security-csrf
 # cp $origin/config/packages/*.yaml config/packages --verbose
 # cp $origin/config/routes/*.yaml config/routes --verbose
-(cd $origin/fos_user && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
+(cd $origin/etap/fos_user && tar --exclude-vcs --create --file - .) | tar --extract --verbose --file -
 composer require friendsofsymfony/user-bundle
 
 # cp $origin/src/Entity/*.php src/Entity --verbose # May be done earlier.
