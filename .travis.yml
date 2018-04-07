@@ -52,7 +52,11 @@ install:
 - composer global require sensiolabs/security-checker
 
 script:
-- composer exec --verbose -- simple-phpunit
+- if php -r "exit(version_compare(PHP_VERSION, '7.1.0', '<'));" ; then
+    composer exec --verbose -- simple-phpunit ;
+  else
+    composer exec --verbose -- simple-phpunit ;
+  fi
 
 after_script:
 - composer config bin-dir --absolute
