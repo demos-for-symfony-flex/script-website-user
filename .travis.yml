@@ -149,6 +149,7 @@ after_script:
 - composer exec --verbose -- console list server --ansi
 - composer exec --verbose -- console help server:start --ansi
 
+- composer exec --verbose -- simple-phpunit
 - composer exec --verbose -- simple-phpunit --help
 - composer exec --verbose -- simple-phpunit --list-groups
 - composer exec --verbose -- simple-phpunit --list-suites
