@@ -49,8 +49,7 @@ install:
 - composer global require sensiolabs/security-checker
 
 script:
-- (! composer exec --verbose -- simple-phpunit)
-- (! composer exec --verbose -- phpunit)
+- composer exec --verbose -- simple-phpunit
 
 after_script:
 - composer config bin-dir --absolute
