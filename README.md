@@ -1,11 +1,7 @@
 # script-website-user
 
-# Status: Travis inverted because of suspected bug in Symfony
-* Webprofiler appears incompatible with simple test!
-
-# Status: dormant!
-* see [symfony-flex-demo/testing-website](https://github.com/symfony-flex-demo/testing-website) for issues related to the suspected bug in Symfony
-* the code in this repository may be migrated to skeleton instead of website-skeleton to avoid the suspected bug.
+# Status: not a priority!
+* see [symfony-flex-demo/script-skeleton-user](https://github.com/symfony-flex-demo/script-skeleton-user)
 
 ## TODO
 * Link to Travis
