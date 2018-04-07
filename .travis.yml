@@ -53,10 +53,10 @@ install:
 
 script:
 - if php -r "exit(version_compare(PHP_VERSION, '7.1.0', '<'));" ; then
-    composer exec --verbose -- simple-phpunit ;
-  else
-    composer exec --verbose -- simple-phpunit ;
+    export SYMFONY_DEPRECATIONS_HELPER=weak_vendors ;
+    printenv SYMFONY_DEPRECATIONS_HELPER ;
   fi
+- composer exec --verbose -- simple-phpunit ;
 
 after_script:
 - composer config bin-dir --absolute
