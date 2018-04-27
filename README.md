@@ -1,10 +1,11 @@
 # script-website-user
 
+[![Build Status](https://travis-ci.org/symfony-flex-demo/script-website-user.svg?branch=master)](https://travis-ci.org/symfony-flex-demo/script-website-user)
+
 # Status: not a priority!
 * see [symfony-flex-demo/script-skeleton-user](https://github.com/symfony-flex-demo/script-skeleton-user)
 
 ## TODO
-* Link to Travis
 * Fixture test users
 * Ensure db schema is written to db. DONE
 * Testing.
