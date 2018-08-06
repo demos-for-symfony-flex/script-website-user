@@ -51,7 +51,10 @@ install:
 - composer global require sensiolabs/security-checker
 
 script:
-- export SYMFONY_DEPRECATIONS_HELPER=$(php -r "if (version_compare(PHP_VERSION, '7.1.0', '<')) {echo 'weak_vendors';}")
+# - export SYMFONY_DEPRECATIONS_HELPER=$(php -r "if (version_compare(PHP_VERSION, '7.1.0', '<')) {echo 'weak_vendors';}")
+# - export SYMFONY_DEPRECATIONS_HELPER=$(php -r "if (version_compare(PHP_VERSION, '7.1.0', '>=')) {echo 'disabled';}")
+# Disabled because of "Referencing controllers with a single colon is deprecated since Symfony 4.1"
+- export SYMFONY_DEPRECATIONS_HELPER=weak_vendors
 - printenv SYMFONY_DEPRECATIONS_HELPER
 - composer exec --verbose -- simple-phpunit
 
